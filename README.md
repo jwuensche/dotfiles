@@ -3,9 +3,9 @@
 This repository contains my used dotfiles for bspwm, polybar, urxvt & sxhkd
 
 ## bspwm
-Largely stanard with a few adjustments for my own used applications
+Largely standard with a few adjustments for my own used applications
 
-`bspwm requires this to be in executable mode`
+`bspwm requires this to be in executable`
 
 ## polybar
 Modified version of space theme by jaagr. This version is compressed to only one bar in the top, thinner and uses less animations as well as a wider spaced menu
