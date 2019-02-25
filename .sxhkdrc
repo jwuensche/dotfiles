@@ -16,7 +16,7 @@ super + Escape
 
 # lock screen
 super + semicolon
-  i3lock -e -i $HOME/Pictures/radio_galaxy.png
+  i3lock -e -l -i $HOME/Pictures/Wallpapers/europe_1756_south.png
 
 #
 # MEDIA KEYS
