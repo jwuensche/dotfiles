@@ -21,6 +21,6 @@ bspc rule -a Telegram-desktop desktop='^7' state='tiled'
 bspc rule -a Slack desktop='^7' state='tiled'
 
 # cursor and wallpaper
-feh --bg-scale /home/jwuensch/Pictures/milkyway.jpg
+feh --bg-scale /home/jwuensch/Pictures/Wallpapers/europe_1756_north.png
 xsetroot -cursor_name left_ptr
 xinput set-button-map "SynPS/2 Synaptics TouchPad" 1 2 3 5 4 7 6

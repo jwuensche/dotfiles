@@ -12,8 +12,8 @@ spacing = 2
 padding-right = 5
 module-margin = 4
 
-font-0 = Roboto:style=Regular :size=9;-1
-font-1 = Material Icons:size=9;0
+font-0 = Roboto:style=Regular :size=10;-1
+font-1 = Material Icons:size=11;0
 font-2 = Source Code Pro:style=Regular:size=9;0
 font-3 = FontAwesome:style=Regular:size=9;0
 
@@ -43,14 +43,12 @@ bar-empty-foreground = #44
 type = internal/battery
 full-at = 98
 
-format-charging =  <label-charging>
+format-charging =  <label-charging>
 format-discharging = <ramp-capacity> <label-discharging>
 format-full = <ramp-capacity> <label-full>
 
 ramp-capacity-0 = 
-ramp-capacity-0-foreground = #f53c3c
 ramp-capacity-1 = 
-ramp-capacity-1-foreground = #ffa900
 ramp-capacity-2 = 
 ramp-capacity-3 = 
 ramp-capacity-4 = 
@@ -68,7 +66,7 @@ bar-capacity-empty-foreground = #44ffffff
 type = internal/cpu
 interval = 0.5
 format = <label> <ramp-coreload>
-label = CPU
+label = 
 
 ramp-coreload-0 = ▁
 ramp-coreload-0-font = 2
@@ -103,7 +101,7 @@ date-alt = %%{F#fff}%A, %d %B %Y  %%{F#fff}%H:%M%%{F#666}:%%{F#fba922}%S%%{F-}
 [module/memory]
 type = internal/memory
 format = <label> <bar-used>
-label = RAM
+label =  
 
 bar-used-width = 30
 bar-used-foreground-0 = #aaff77
@@ -153,20 +151,17 @@ interval = 3.0
 ping-interval = 10
 
 format-connected = <ramp-signal> <label-connected>
+label-connected-font = 1
 label-connected = %essid%
-label-disconnected =    not connected
-label-disconnected-foreground = #66
+label-disconnected = 
 
-ramp-signal-0 = 
-ramp-signal-1 = 
-ramp-signal-2 = 
-ramp-signal-3 = 
-ramp-signal-4 = 
+ramp-signal-0 = 
+ramp-signal-1 = 
+ramp-signal-2 = 
+ramp-signal-3 = 
+ramp-signal-4 = 
 
-animation-packetloss-0 = 
-animation-packetloss-0-foreground = #ffa64c
-animation-packetloss-1 = 
-animation-packetloss-1-foreground = ${bar/top.foreground}
+animation-packetloss-0 = 
 animation-packetloss-framerate = 500
 
 [module/wired-network]
@@ -184,10 +179,11 @@ headphone-mixer = Headphone
 headphone-id = 9
 
 format-volume = <ramp-volume> <label-volume>
-label-muted =   muted
+label-muted = 
+label-font = 1
 label-muted-foreground = #66
 
-ramp-volume-0 = 
+ramp-volume-0 =  
 ramp-volume-1 = 
 ramp-volume-2 = 
 ramp-volume-3 = 
@@ -197,21 +193,15 @@ type = custom/menu
 
 format-padding = 3
 
-label-open = 
-label-close = 
+label-open =  
+label-close =  
 
-menu-0-0 = Terminate WM
-menu-0-0-foreground = #fba922
-menu-0-0-exec = bspc quit -1
+menu-0-0 =  
+menu-0-0-exec = reboot
 menu-0-0-padding = 5
-menu-0-1 = Reboot
-menu-0-1-foreground = #fba922
-menu-0-1-exec = reboot
+menu-0-1 =  
+menu-0-1-exec = poweroff
 menu-0-1-padding = 5
-menu-0-2 = Power off
-menu-0-2-foreground = #fba922
-menu-0-2-exec = poweroff
-menu-0-2-padding = 5
 
 [module/clock]
 type = internal/date
