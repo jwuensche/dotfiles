@@ -4,29 +4,29 @@
 
 # terminal emulator
 super + Return
-  urxvt
+  gnome-terminal
 
 # program launcher
-super + @space
-  dmenu_run -b -fn 'Roboto Regular-9'
+super + q
+  rofi -modi drun,run -show
 
 # make sxhkd reload its configuration files:
 super + Escape
   pkill -USR1 -x sxhkd
 
 # lock screen
-super + semicolon
-  i3lock -e -l -i $HOME/Pictures/Wallpapers/europe_1756_south.png
+super + l
+  i3lock -e -t -i $HOME/Pictures/Wallpapers/europe_1756_south.png
 
 #
 # MEDIA KEYS
 #
 
 XF86AudioRaiseVolume
-  amixer set Master 5%+
+  pamixer -i 3
 
 XF86AudioLowerVolume
-  amixer set Master 5%-
+  pamixer -d 3
 
 XF86AudioMute
   amixer set Master toggle
@@ -72,7 +72,7 @@ super + ctrl + {m,x,y,z}
 #
 
 # focus the node in the given direction
-super + {_,shift + }{h,j,k,l}
+super + {_,shift + }{Left,Down,Up,Right}
   bspc node -{f,s} {west,south,north,east}
 
 # focus the node for the given path jump

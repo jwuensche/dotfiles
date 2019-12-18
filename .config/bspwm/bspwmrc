@@ -3,10 +3,11 @@
 sxhkd &
 polybar top &
 
-bspc monitor -d I II III IV V VI VII VIII IX X
+bspc monitor eDP-1 -d I II III IV V VI VII VIII IX
+bspc monitor HDMI-1 -d X
 
 bspc config border_width        0
-bspc config window_gap          3
+bspc config window_gap          2
 bspc config top_padding         24
 
 bspc config split_ratio          0.52
@@ -14,13 +15,12 @@ bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 
 bspc rule -a Gimp desktop='^6' state='tiled' follow=on
-bspc rule -a Emacs desktop='^3' follow=on
 bspc rule -a Firefox desktop='^2' follow=on
 bspc rule -a Steam desktop='^5'
 bspc rule -a Telegram-desktop desktop='^7' state='tiled'
 bspc rule -a Slack desktop='^7' state='tiled'
 
 # cursor and wallpaper
-feh --bg-scale /home/jwuensch/Pictures/Wallpapers/europe_1756_north.png
+feh --bg-scale /home/fred/Pictures/Wallpapers/peak.jpg
 xsetroot -cursor_name left_ptr
-xinput set-button-map "SynPS/2 Synaptics TouchPad" 1 2 3 5 4 7 6
+xinput set-button-map "ETPS/2 Elantech Touchpad" 1 2 3 5 4 7 6
