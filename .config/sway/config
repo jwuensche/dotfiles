@@ -10,7 +10,7 @@ set $right l
 set $term tilix
 set $menu 'rofi -modi drun,run -show'
 set $lock 'swaylock -i /home/fred/Pictures/Wallpapers/penguin.2.jpg --indicator-thickness 5 --font Fira\ Mono'
-set $notification "mako --default-timeout 5000 --max-icon-size 24 --background-color '#026943CC' --border-size 1 --width 250"
+set $notification "mako --default-timeout 5000 --max-icon-size 24 --background-color '#026943FF' --border-size 1 --width 250"
 
 #
 # Output configuration
@@ -235,3 +235,4 @@ bar {
 }
 
 exec $notification
+exec "export MOZ_ENABLE_WAYLAND=1"
