@@ -72,11 +72,10 @@ window#waybar.solo {
     padding: 0 10px;
     margin: 0 4px;
     color: #ffffff;
-    background-color: #447250;
 }
 
 #battery.critical:not(.charging) {
-    background-color: #f53c3c;
+    background-color: rgba(245, 60 , 60, 0.5);
     color: #ffffff;
 }
 
@@ -85,13 +84,9 @@ label:focus {
 }
 
 #pulseaudio {
-    background-color: #a1c400;
-    color: #000000;
 }
 
 #pulseaudio.muted {
-    background-color: #10b181;
-    color: #2a5c45;
 }
 
 #custom-media {
