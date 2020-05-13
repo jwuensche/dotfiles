@@ -1,6 +1,6 @@
 # Dotfiles
 
-This repository contains my used dotfiles for [sway](ihttps://swaywm.org/), [waybar](https://github.com/Alexays/Waybar),
+This repository contains my used dotfiles for [sway](https://swaywm.org/), [waybar](https://github.com/Alexays/Waybar),
 [wofi](https://hg.sr.ht/~scoopta/wofi), [mako](https://github.com/emersion/mako), [wob](https://github.com/francma/wob), and
 [redshift](https://github.com/minus7/redshift/tree/wayland) (wayland compatible fork).
 
