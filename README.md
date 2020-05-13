@@ -1,22 +1,28 @@
 # Dotfiles
 
-This repository contains my used dotfiles for bspwm, polybar & sxhkd
+This repository contains my used dotfiles for [sway](), [waybar](), [wofi](), [mako](), [wob](), and [redshift]().
 
-## bspwm
-Largely standard with a few adjustments for my own used applications
+## sway
 
-`bspwm requires this to be in executable`
+My sway config is orientated to behave similar to the ol' bspwm.
 
-## polybar
-Modified version of space theme by jaagr. This version is compressed to only one bar in the top, thinner and uses less animations as well as a wider
-spaced menu and Twitter Emojis.
+> Take note that you have to change somethings like the device ids for input methods, and monitor names/resolution/offsets.
+> They can be easily retrieved with `swaymsg -t get_inputs` and `swaymsg -t get_outputs`.
 
-This bar requires a few fonts to be displayed correctly namely:  
-- `Fira Code`
-- `Twemoji Color Emoji`
+## waybar
 
-## sxhkd
-Again quite a few standard bindings, but adjusted to fit with the style of the rest and bind media keys
+🥳 It's emojified 🚀
+
+Properties displayed are workspaces, sway modes, date and time, displaylock inhibitor, current audio volume, network devices, cpu usage, ram 🐏 usage,
+temperature, display brightness and battery remaining.
+
+## wofi
+
+Fadein wofi tab at the bottom of the active screen (see screenshot).
+
+## mako
+
+Same styling as the wofi bottom tab, but in the top of the screen.
 
 # Look
 ![](look.png)

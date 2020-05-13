@@ -265,6 +265,10 @@ values."
    ;; If non nil smooth scrolling (native-scrolling) is enabled. Smooth
    ;; scrolling overrides the default behavior of Emacs which recenters point
    ;; when it reaches the top or bottom of the screen. (default t)
+   dotspacemacs-mode-line-theme 'spacemacs
+   ;; The style that the modeline should have valid values are  'spacemacs, 'all-the-icons,
+   ;; 'custom, 'vim-powerline or 'vanilla or a list with `car' one of the previous values
+   ;; and properties one of the following: `:separator' or `:separator-scale'
    dotspacemacs-smooth-scrolling t
    ;; Control line numbers activation.
    ;; If set to `t' or `relative' line numbers are turned on in all `prog-mode' and
@@ -312,7 +316,7 @@ values."
    ;; (default nil)
    dotspacemacs-whitespace-cleanup nil
    )
-  (setq neo-theme 'arrow)
+  ;;(setq neo-theme 'arrow)
   ;;(add-hook 'after-init-hook #'neotree-toggle)
   )
 
@@ -411,3 +415,71 @@ you should place your code here."
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+(defun dotspacemacs/emacs-custom-settings ()
+  "Emacs custom settings.
+This is an auto-generated function, do not modify its content directly, use
+Emacs customize menu instead.
+This function is called at the very end of Spacemacs initialization."
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(ansi-color-names-vector
+   ["#263238" "#ff5370" "#c3e88d" "#ffcb6b" "#82aaff" "#c792ea" "#89DDFF" "#EEFFFF"])
+ '(company-quickhelp-color-background "#3E4452")
+ '(company-quickhelp-color-foreground "#ABB2BF")
+ '(custom-safe-themes
+   (quote
+    ("be9645aaa8c11f76a10bcf36aaf83f54f4587ced1b9b679b55639c87404e2499" "1ed5c8b7478d505a358f578c00b58b430dde379b856fbcb60ed8d345fc95594e" default)))
+ '(evil-want-Y-yank-to-eol nil)
+ '(fci-rule-color "#FFFFF8" t)
+ '(fill-column 120)
+ '(jdee-db-active-breakpoint-face-colors (cons "#171F24" "#c792ea"))
+ '(jdee-db-requested-breakpoint-face-colors (cons "#171F24" "#c3e88d"))
+ '(jdee-db-spec-breakpoint-face-colors (cons "#171F24" "#37474F"))
+ '(json-reformat:indent-width 2)
+ '(objed-cursor-color "#ff5370")
+ '(package-selected-packages
+   (quote
+    (doom-opera-theme lv ess julia-mode company-emoji memoize rainbow-mode doom doom-themes zone-sl noflet ensime sbt-mode scala-mode insert-shebang fish-mode company-shell xkcd web-mode tagedit slim-mode scss-mode sass-mode pug-mode helm-css-scss haml-mode emmet-mode company-web web-completion-data tide typescript-mode intero hlint-refactor hindent helm-hoogle haskell-snippets flycheck-haskell company-ghci company-ghc ghc haskell-mode company-cabal cmm-mode emoji-cheat-sheet-plus zones one-themes editorconfig zenburn-theme zen-and-art-theme white-sand-theme underwater-theme ujelly-theme twilight-theme twilight-bright-theme twilight-anti-bright-theme toxi-theme tao-theme tangotango-theme tango-plus-theme tango-2-theme sunny-day-theme sublime-themes subatomic256-theme subatomic-theme spacegray-theme soothe-theme solarized-theme soft-stone-theme soft-morning-theme soft-charcoal-theme smyx-theme seti-theme reverse-theme rebecca-theme railscasts-theme purple-haze-theme professional-theme planet-theme phoenix-dark-pink-theme phoenix-dark-mono-theme organic-green-theme omtose-phellack-theme oldlace-theme occidental-theme obsidian-theme noctilux-theme naquadah-theme mustang-theme monokai-theme monochrome-theme molokai-theme moe-theme minimal-theme material-theme majapahit-theme madhat2r-theme lush-theme light-soap-theme jbeans-theme jazz-theme ir-black-theme inkpot-theme heroku-theme hemisu-theme hc-zenburn-theme gruvbox-theme gruber-darker-theme grandshell-theme gotham-theme gandalf-theme flatui-theme flatland-theme farmhouse-theme exotica-theme espresso-theme dracula-theme django-theme darktooth-theme autothemer darkokai-theme darkmine-theme darkburn-theme dakrone-theme cyberpunk-theme color-theme-sanityinc-tomorrow color-theme-sanityinc-solarized clues-theme cherry-blossom-theme busybee-theme bubbleberry-theme birds-of-paradise-plus-theme badwolf-theme apropospriate-theme anti-zenburn-theme ample-zen-theme ample-theme alect-themes afternoon-theme 2048-game spacemacs-theme omnisharp csharp-mode vmd-mode web-beautify livid-mode skewer-mode simple-httpd json-mode json-snatcher json-reformat js2-refactor multiple-cursors js2-mode js-doc company-tern tern coffee-mode yapfify pyvenv pytest pyenv-mode py-isort pip-requirements live-py-mode hy-mode dash-functional helm-pydoc cython-mode company-anaconda anaconda-mode pythonic ess-smart-equals ess-R-data-view ctable csv-mode all-the-icons yaml-mode disaster company-c-headers cmake-mode clang-format toml-mode racer flycheck-rust cargo rust-mode org-projectile org-category-capture org-present org-pomodoro alert log4e gntp org-mime org-download mmm-mode markdown-toc markdown-mode htmlize helm-company helm-c-yasnippet gnuplot gh-md fuzzy flyspell-correct-helm flyspell-correct flycheck-pos-tip pos-tip flycheck company-statistics company-go company auto-yasnippet yasnippet auto-dictionary ac-ispell auto-complete go-guru go-eldoc go-mode ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline powerline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox spinner org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint indent-guide hydra hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation helm-themes helm-swoop helm-projectile helm-mode-manager helm-make projectile pkg-info epl helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-ediff evil-args evil-anzu anzu evil goto-chg undo-tree eval-sexp-fu highlight elisp-slime-nav dumb-jump f dash s diminish define-word column-enforce-mode clean-aindent-mode bind-map bind-key auto-highlight-symbol auto-compile packed aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line helm avy helm-core popup async)))
+ '(pdf-view-midnight-colors (cons "#EEFFFF" "#263238"))
+ '(rustic-ansi-faces
+   ["#263238" "#ff5370" "#c3e88d" "#ffcb6b" "#82aaff" "#c792ea" "#89DDFF" "#EEFFFF"])
+ '(vc-annotate-background "#FFFFFD")
+ '(vc-annotate-color-map
+   (quote
+    ((20 . "#D5D2C8")
+     (40 . "#B0ADA2")
+     (60 . "#B0ADA2")
+     (80 . "#737063")
+     (100 . "#737063")
+     (120 . "#4E4B3D")
+     (140 . "#4E4B3D")
+     (160 . "#373426")
+     (180 . "#373426")
+     (200 . "#373426")
+     (220 . "#292617")
+     (240 . "#292617")
+     (260 . "#292617")
+     (280 . "#201D0E")
+     (300 . "#201D0E")
+     (320 . "#201D0E")
+     (340 . "#1B1809")
+     (360 . "#1B1809"))))
+ '(vc-annotate-very-old-color "#4E4B3D")
+ '(web-mode-block-padding 0)
+ '(web-mode-code-indent-offset 2)
+ '(web-mode-css-indent-offset 2)
+ '(web-mode-markup-indent-offset 2)
+ '(web-mode-part-padding 2)
+ '(web-mode-script-padding 2)
+ '(web-mode-sql-indent-offset 2)
+ '(web-mode-style-padding 2))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
+)

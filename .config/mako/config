@@ -1,0 +1,10 @@
+default-timeout=5000
+max-icon-size=32
+background-color=#F5F5DCDD
+border-size=1
+text-color=#000000FF
+border-radius=10
+font=PTMono 10
+width=350
+icon-path=/usr/share/icons/Paper:/home/fred/.local/share/icons/hicolor
+anchor=top-center

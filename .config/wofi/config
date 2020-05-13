@@ -1,7 +1,7 @@
-width=400
-height=600
+width=800
+height=300
+x=880
+y=1140
 mode=drun
-x=50
-y=50
 allow_images=true
 filter_rate=100 

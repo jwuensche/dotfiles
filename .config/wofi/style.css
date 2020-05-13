@@ -1,17 +1,19 @@
 window {
 background-color: rgba(0, 0, 0, 0);
-font: Fire Code;
+font: PTMono;
 font-size: 16;
 color: black;
+animation: fadein 1s;
+position: relative;
 }
 
 #input {
 color: black;
 font-style: italic;
-border: none;
-border-radius: 0;
+border-radius: 10px 10px 0 0;
 border-bottom: 3px dashed black;
 background-color: rgba(255,255,230,0.8);
+padding: 10px;
 }
 
 #inner-box {
@@ -25,8 +27,14 @@ background-color: rgba(0,0,0,0);
 
 #scroll {
 background-color: rgba(245,245,220,0.8);
+padding: 10px;
 }
 
 #text {
 background-color: rgba(0,0,0,0);
+}
+
+@keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
 }

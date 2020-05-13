@@ -1,14 +1,21 @@
 {
     "layer": "top",
-    "height": 17,
+    "height": 18,
     "modules-left": ["sway/workspaces", "sway/mode", "custom/media"],
-    "modules-center": [],
-    "modules-right": ["idle_inhibitor", "pulseaudio", "network", "cpu", "memory", "temperature", "backlight", "clock", "battery"],
+    "modules-center": ["clock"],
+    "modules-right": ["idle_inhibitor", "pulseaudio", "network", "cpu", "memory", "temperature", "backlight", "battery"],
     // Modules configuration
     "sway/workspaces": {
         "disable-scroll": true,
-        "all-outputs": true,
-        "format": "{name}"
+        "all-outputs": false,
+        "format": "{icon} {name}",
+        "format-icons": {
+            "1": "⌨️",
+            "2": "📁",
+            "3": "📝",
+            "4": "⌨️",
+            "default": "🚀"
+        }
     },
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
@@ -25,7 +32,7 @@
         "spacing": 10
     },
     "clock": {
-        "format": "{:%Y-%m-%d %H:%M}",
+        "format": "{:%a %d . %B %H:%M}",
         "tooltip": false
     },
     "cpu": {
@@ -41,7 +48,7 @@
         "critical-threshold": 80,
         // "format-critical": "{temperatureC}°C {icon}",
         "format": "{temperatureC}°C {icon}",
-        "format-icons": ["", "🌡️", ""]
+        "format-icons": ["🧊", "🌡️", "🌡️"]
     },
     "backlight": {
         // "device": "acpi_video1",
@@ -50,7 +57,7 @@
     },
     "battery": {
         "states": {
-            // "good": 95,
+            "good": 95,
             "warning": 30,
             "critical": 15
         },
