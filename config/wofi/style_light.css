@@ -11,7 +11,8 @@ position: relative;
 color: black;
 font-style: italic;
 border-radius: 10px 10px 0 0;
-border-bottom: 3px dashed black;
+border-bottom: 2px dashed black;
+animation: foo 0.5s;
 background-color: rgba(255,255,230,0.8);
 padding: 10px;
 }
@@ -34,7 +35,16 @@ padding: 10px;
 background-color: rgba(0,0,0,0);
 }
 
+#entry :hover {
+background-color: white;
+}
+
+@keyframes foo {
+  from {margin-top: 300px;}  
+  to {margin-top: 0px;}  
+}
+
 @keyframes fadein {
-  from {bottom: 0; opacity: 0;}
-  to {bottom: 30px; opacity: 1;}
+  from {opacity: 0;}
+  to {opacity: 1;}
 }

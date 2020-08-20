@@ -2,14 +2,14 @@
     border: none;
     border-radius: 2px;
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: Cantarell, Twemoji, sans-serif;
+    font-family: Cantarell, sans-serif;
     font-weight: bold;
     font-size: 12px;
     min-height: 0;
 }
 
 window#waybar {
-    background-color: rgba(43, 48, 59, 0.7);
+    background-color: rgba(43, 48, 59, 0);
     /* border-bottom: 3px solid rgba(100, 114, 125, 0.5); */
     color: #ffffff;
     transition-property: background-color;
@@ -31,14 +31,14 @@ window#waybar.solo {
 
 #workspaces button {
     padding: 0 10px;
-    background-color: transparent;
+    background-color: rgba(0,0,0,0.3);
     color: #ffffff;
     border-bottom: 3px solid transparent;
 }
 
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
 #workspaces button:hover {
-    background: rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.3);
     box-shadow: inherit;
     border-bottom: 3px solid rgba(255,255,255,0.6);
 }
@@ -73,32 +73,28 @@ window#waybar.solo {
 #tray,
 #mode,
 #idle_inhibitor,
-#mpd {
-    padding: 0 10px;
-    margin: 0 4px;
+#mpd,
+#window {
+    padding: 0 13px;
+    background-color: rgba(0,0,0,0.3);
+    margin: 0 0px;
     color: #ffffff;
 }
 
-#clock,
-#battery,
-#cpu,
-#memory,
-#temperature,
-#backlight,
-#network,
-#pulseaudio,
-#custom-media,
-#tray,
-#mode,
-#idle_inhibitor,
-#mpd :hover {
-  background-color: rgba(255,255,255,0.05);
-  transition-property: background-color;
-  transition-duration: .5s;
+#idle_inhibitor {
+  border-radius: 0 0 0 5px;
+}
+
+#window {
+  border-radius: 0 0 5px 0;
+}
+
+#clock {
+  border-radius: 0 0 5px 5px;
 }
 
 #battery.critical:not(.charging) {
-    background-color: rgba(245, 60 , 60, 0.5);
+    background-color: rgba(245, 60 , 60, 0.3);
     color: #ffffff;
 }
 

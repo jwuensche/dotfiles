@@ -1,24 +1,37 @@
 {
     "layer": "top",
     "height": 18,
-    "modules-left": ["sway/workspaces", "sway/mode", "custom/media"],
+    "width": 2560,
+    "modules-left": ["custom/menu", "sway/workspaces", "sway/mode", "tray"],
     "modules-center": ["clock"],
-    "modules-right": ["idle_inhibitor", "pulseaudio", "network", "cpu", "memory", "temperature", "backlight", "battery"],
+    "modules-right": ["pulseaudio", "network", "cpu", "memory", "temperature", "backlight", "battery"],
     // Modules configuration
     "sway/workspaces": {
         "disable-scroll": true,
-        "all-outputs": false,
-        "format": "{icon} {name}",
-        "format-icons": {
-            "1": "⌨️",
-            "2": "📁",
-            "3": "📝",
-            "4": "⌨️",
-            "default": "🚀"
+        "all-outputs": true,
+        "persistent_workspaces": {
+        "1": [],
+        "2": [],
+        "3": [],
+        "4": [],
+        "5": [],
+        "6": [],
+        "7": [],
+        "8": [],
+        "9": []
         }
+    },
+    "custom/menu": {
+        "format": "  Launcher",
+        "tooltip": false,
+        "on-click": "~/.config/waybar/scripts/wofi.sh"
     },
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
+    },
+    "sway/window": {
+        "max-length": 80,
+        "tooltip": false
     },
     "idle_inhibitor": {
         "format": "{icon}",
@@ -32,7 +45,7 @@
         "spacing": 10
     },
     "clock": {
-        "format": "{:%a %d . %B %H:%M}",
+        "format": "{:%a %d. %B %H:%M}",
         "tooltip": false
     },
     "cpu": {
@@ -96,17 +109,5 @@
             "default": ["🔈", "🔉", "🔊"]
         },
         "on-click": "pavucontrol"
-    },
-    "custom/media": {
-        "format": "{icon} {}",
-        "return-type": "json",
-        "max-length": 40,
-        "format-icons": {
-            "spotify": "",
-            "default": "🎜"
-        },
-        "escape": true,
-        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
-        // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
     }
 }

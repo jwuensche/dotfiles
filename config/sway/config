@@ -9,13 +9,14 @@ set $up k
 set $right l
 set $term tilix
 set $menu 'wofi'
-set $lock 'swaylock -i /home/fred/Pictures/Wallpapers/jiji_side.png -s center --indicator-thickness 5 --font Fira\ Mono'
+set $lock 'swaylock -i /home/fred/Pictures/Wallpapers/mountain_range.jpg -s fill -e --indicator-thickness 5 --font Fira\ Mono'
 set $notification 'mako'
 set $redshift 'redshift'
+set $sysmenu 'wlogout -p layer-shell -b 5 -T 1200 -B 50'
 
 #
 # Output configuration
-output * bg /home/fred/Pictures/Wallpapers/monument.jpg fill
+# output * bg /home/fred/Pictures/Wallpapers/monument.jpg fill
 
 output HDMI-A-2 {
   resolution 2560x1440
@@ -31,7 +32,11 @@ output eDP-1 {
 
 #
 # redshift to ease colors
-bindsym Pause exec $redshift
+bindsym Pause exec 'pkill redshift || $redshift'
+exec $redshift
+
+#system menu wlogout
+bindsym $mod+p exec $sysmenu
 
 
 set $laptop eDP-1
@@ -42,18 +47,18 @@ bindswitch --reload lid:off output $laptop enable
 # BSPWM-wise sway
 default_border none
 default_floating_border none
-gaps inner 5
+gaps inner 20
 focus_follows_mouse no
-for_window [shell="."] split toggle
+# for_window [shell="."] split toggle
 
 # wob configuration
 exec 'mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob -a bottom'
 
 #
 # Media Keys
-bindsym XF86AudioRaiseVolume exec 'pamixer -i 3 && pamixer --get-volume-human > $SWAYSOCK.wob'
-bindsym XF86AudioLowerVolume exec 'pamixer -d 3 && pamixer --get-volume-human > $SWAYSOCK.wob'
-bindsym XF86AudioMute exec 'pamixer -t && pamixer --get-volume-human > $SWAYSOCK.wob'
+bindsym XF86AudioRaiseVolume exec 'pamixer -i 3 && pamixer --get-volume > $SWAYSOCK.wob'
+bindsym XF86AudioLowerVolume exec 'pamixer -d 3 && pamixer --get-volume > $SWAYSOCK.wob'
+bindsym XF86AudioMute exec 'pamixer -t && if $(pamixer --get-mute); then echo 0; else pamixer --get-volume; fi > $SWAYSOCK.wob'
 bindsym XF86MonBrightnessUp exec 'light -A 5'
 bindsym XF86MonBrightnessDown exec 'light -U 5'
 bindsym Print exec $lock
@@ -64,8 +69,7 @@ bindsym Print exec $lock
 # Example configuration:
 #
 exec swayidle -w \
-         timeout 300 $lock \
-         timeout 600 'swaymsg "output * dpms off"' \
+         timeout 300  "swaymsg \"output * dpms off\" && $lock"\
               resume 'swaymsg "output * dpms on"' \
          before-sleep 'swaylock -f -c 000000'
 
@@ -75,10 +79,10 @@ exec swayidle -w \
 
 ### Input configuration
 input "2:7:SynPS/2_Synaptics_TouchPad" {
-    dwt enabled
-    tap enabled
-    natural_scroll enabled
-    middle_emulation enabled
+  dwt enabled
+  tap enabled
+  natural_scroll enabled
+  middle_emulation enabled
 }
 
 input "1:1:AT_Translated_Set_2_keyboard" {
@@ -161,7 +165,7 @@ input "1133:49277:Logitech_Gaming_Mouse_G502" {
     bindsym $mod+8 workspace 8
     bindsym $mod+9 workspace 9
     bindsym $mod+0 workspace 10
-    # Move focused container to workspace
+    # Move focused ntainer to workspace
     bindsym $mod+Shift+1 move container to workspace 1
     bindsym $mod+Shift+2 move container to workspace 2
     bindsym $mod+Shift+3 move container to workspace 3
@@ -261,4 +265,4 @@ bar {
 }
 
 exec $notification
-# exec '$HOME/.config/sway/keyring.sh'
+exec $HOME/.config/sway/random_wallpaper.sh

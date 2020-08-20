@@ -1,0 +1,53 @@
+window {
+background-color: rgba(0, 0, 0, 0);
+font-family: Cantarell;
+font-weight: bolder;
+font-size: 16;
+color: white;
+font-color: white;
+animation: fadein 1s;
+}
+
+#input {
+font-style: italic;
+color: white;
+border-radius: 5px 5px 0 0;
+border-bottom: 2px dashed black;
+animation: foo 0.5s;
+background-color: rgba(0,0,0,0.5);
+padding: 10px;
+border-top: none;
+border-left: none;
+border-right: none;
+}
+
+#inner-box {
+padding: 10px;
+}
+
+#outer-box {
+background-color: rgba(0,0,0,0);
+}
+
+#scroll {
+background-color: rgba(0,0,0,0.5);
+padding: 10px;
+}
+
+#text {
+background-color: rgba(0,0,0,0);
+}
+
+#entry :hover {
+background-color: white;
+}
+
+@keyframes foo {
+  from {margin-top: 300px;}  
+  to {margin-top: 0px;}  
+}
+
+@keyframes fadein {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
