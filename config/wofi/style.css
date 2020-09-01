@@ -13,7 +13,6 @@ font-style: italic;
 color: white;
 border-radius: 5px 5px 0 0;
 border-bottom: 2px dashed black;
-animation: foo 0.5s;
 background-color: rgba(0,0,0,0.5);
 padding: 10px;
 border-top: none;
@@ -27,6 +26,7 @@ padding: 10px;
 
 #outer-box {
 background-color: rgba(0,0,0,0);
+animation: foo 0.3s;
 }
 
 #scroll {

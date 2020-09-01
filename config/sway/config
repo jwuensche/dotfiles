@@ -9,7 +9,8 @@ set $up k
 set $right l
 set $term tilix
 set $menu 'wofi'
-set $lock 'swaylock -i /home/fred/Pictures/Wallpapers/mountain_range.jpg -s fill -e --indicator-thickness 5 --font Fira\ Mono'
+set $lock 'swaylock -i /home/fred/Pictures/vector_Wallpapers/mountain_range.jpg -s fill -e --indicator-thickness 5 --font Fira\ Mono'
+set $screen 'grim -g "$(slurp)"'
 set $notification 'mako'
 set $redshift 'redshift'
 set $sysmenu 'wlogout -p layer-shell -b 5 -T 1200 -B 50'
@@ -61,7 +62,7 @@ bindsym XF86AudioLowerVolume exec 'pamixer -d 3 && pamixer --get-volume > $SWAYS
 bindsym XF86AudioMute exec 'pamixer -t && if $(pamixer --get-mute); then echo 0; else pamixer --get-volume; fi > $SWAYSOCK.wob'
 bindsym XF86MonBrightnessUp exec 'light -A 5'
 bindsym XF86MonBrightnessDown exec 'light -U 5'
-bindsym Print exec $lock
+bindsym Print exec $screen
 
 
 ### Idle configuration
@@ -264,5 +265,5 @@ bar {
   swaybar_command waybar
 }
 
-exec $notification
 exec $HOME/.config/sway/random_wallpaper.sh
+exec $notification
