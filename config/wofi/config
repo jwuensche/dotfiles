@@ -1,7 +1,8 @@
-width=800
-height=230
-x=880
-y=1140
+width=0
+height=15%
+x=1%
+y=1150%
+hide_scroll=true
 mode=drun
 allow_images=true
 filter_rate=100 

@@ -1,4 +1,10 @@
 {
+    "label" : "lock screen",
+    "action" : "swaylock --color '#000000'",
+    "text" : "Lock Screen",
+    "keybind" : "l"
+}
+{
     "label" : "hibernate",
     "action" : "systemctl hibernate",
     "text" : "Hibernate",

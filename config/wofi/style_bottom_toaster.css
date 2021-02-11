@@ -43,8 +43,8 @@ background-color: white;
 }
 
 @keyframes foo {
-  from {margin-right: 500px;}  
-  to {margin-right: 0px;}  
+  from {margin-top: 300px;}  
+  to {margin-top: 0px;}  
 }
 
 @keyframes fadein {

@@ -1,0 +1,111 @@
+{
+    "layer": "top",
+    "height": 27,
+    "modules-left": ["custom/menu", "sway/workspaces", "sway/mode", "tray"],
+    "modules-center": ["clock"],
+    "modules-right": ["pulseaudio", "network", "cpu", "memory", "temperature", "backlight", "battery"],
+    // Modules configuration
+    "sway/workspaces": {
+        "disable-scroll": true,
+        "persistent_workspaces": {
+        "1": [],
+        "2": [],
+        "3": [],
+        "4": [],
+        "5": [],
+        "6": [],
+        "7": [],
+        "8": [],
+        "9": []
+        }
+    },
+    "custom/menu": {
+        "format": "Workspaces",
+        "tooltip": false,
+        "on-click": "~/.config/waybar/scripts/wofi.sh"
+    },
+    "sway/mode": {
+        "format": "<span style=\"italic\">{}</span>"
+    },
+    "sway/window": {
+        "max-length": 80,
+        "tooltip": false
+    },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "☕",
+            "deactivated": "🥤"
+        }
+    },
+    "tray": {
+        // "icon-size": 21,
+        "spacing": 10
+    },
+    "clock": {
+        "format": "{:%a %d. %B %H:%M}",
+        "tooltip": false
+    },
+    "cpu": {
+        "format": "{usage}% 🧠",
+        "tooltip": false
+    },
+    "memory": {
+        "format": "{}% 🐏"
+    },
+    "temperature": {
+        // "thermal-zone": 2,
+        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+        "critical-threshold": 80,
+        // "format-critical": "{temperatureC}°C {icon}",
+        "format": "{temperatureC}°C {icon}",
+        "format-icons": ["🧊", "🌡️", "🌡️"]
+    },
+    "backlight": {
+        // "device": "acpi_video1",
+        "format": "{percent}% {icon}",
+        "format-icons": ["💡", "💡"]
+    },
+    "battery": {
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{time} {icon}",
+        "format-charging": "{capacity}% 🔌⚡",
+        "format-plugged": "{capacity}% 🔌",
+        "format-alt": "{capacity}% {icon}",
+        // "format-good": "", // An empty format will hide the module
+        // "format-full": "",
+        "format-icons": ["⚡"]
+    },
+    "network": {
+        // "interface": "wlp2*", // (Optional) To force the use of this interface
+        "format-wifi": "{essid} ({signalStrength}%) 📡",
+        "format-ethernet": "{ifname}: {ipaddr}/{cidr} 🔗",
+        "format-linked": "{ifname} (No IP) 🔗",
+        "format-disconnected": "Disconnected ⚠",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}",
+        "tooltip": false
+    },
+    "pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "{volume}% {icon} {format_source}",
+        "format-bluetooth": "{volume}% {icon}🅱️  {format_source}",
+        "format-bluetooth-muted": "🔇 {icon}🅱️  {format_source}",
+        "format-muted": "🔇 {format_source}",
+        "format-source": "{volume}% 🎙️",
+        "format-source-muted": "🤫🎙️",
+        "format-icons": {
+            "headphones": "🎧",
+            "handsfree": "",
+            "headset": "",
+            "phone": "🎧",
+            "portable": "🎧",
+            "car": "🚗",
+            "default": ["🔈", "🔉", "🔊"]
+        },
+        "on-click": "pavucontrol"
+    }
+}
