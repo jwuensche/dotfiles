@@ -53,11 +53,10 @@ bindswitch --reload lid:off output $laptop enable
 
 #
 # BSPWM-wise sway
-default_border none
-default_floating_border none
+default_border pixel 5
+default_floating_border pixel 5
 gaps inner 5
 focus_follows_mouse no
-# for_window [shell="."] split toggle
 
 #
 # Media Keys
