@@ -1,7 +1,7 @@
-width=0
-height=15%
-x=1%
-y=1150%
+width=30%
+height=30%
+#x=50%
+#y=50%
 hide_scroll=true
 mode=drun
 allow_images=true

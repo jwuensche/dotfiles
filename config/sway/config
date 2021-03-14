@@ -90,6 +90,11 @@ input "2:7:SynPS/2_Synaptics_TouchPad" {
   # middle_emulation enabled
 }
 
+# # Drawing tablet
+# input "11551:888:Wacom_Co.,Ltd._Intuos_BT_M" {
+#   map_to_output DP-4
+# }
+
 input "1:1:AT_Translated_Set_2_keyboard" {
   xkb_layout us
   xkb_variant altgr-intl
