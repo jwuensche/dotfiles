@@ -8,6 +8,7 @@ button {
 	background-color: rgba(30,30,30,0.8);
     font-family: Cantarell;
     color: white;
+    margin-top: 20px;
 	border-style: solid;
 	border-width: 1px;
     border-radius: 0;

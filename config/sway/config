@@ -7,36 +7,42 @@ set $left h
 set $down j
 set $up k
 set $right l
-set $term sakura
+set $term alacritty
 set $menu 'wofi'
 set $lock 'swaylock -i /home/fred/Pictures/vector_Wallpapers/mountain_range.jpg -s fill -e --indicator-thickness 5 --font Fira\ Mono'
 set $screen 'grim -g "$(slurp)" - | wl-copy'
-set $notification 'mako'
 set $gammastep 'gammastep'
-set $sysmenu 'wlogout -p layer-shell -b 6 -T 1200 -B 50'
+set $sysmenu 'wlogout -p layer-shell -b 6 -B 50'
 
 #
 # Output configuration
 # output * bg /home/fred/Pictures/Wallpapers/monument.jpg fill
 
-output DP-3 {
-  resolution 2560x1440
-  scale 1
-  position 0 0
-}
-
-# this is really the same monitor as the one on DP-3 but I switched them around and don't want to switch the plug around again...
-output DP-4 {
-  resolution 2560x1440
-  scale 1
-  position 0 0
-}
-
-output eDP-1 {
-  resolution 2560x1440
-  scale 1
-  position 2560 0
-}
+# output DP-9 {
+#   resolution 480x1920
+#   scale 1
+#   transform 270
+#   position 640 1440
+# }
+# 
+# # this is really the same monitor as the one on DP-3 but I switched them around and don't want to switch the plug around again...
+# output DP-4 {
+#   resolution 2560x1440
+#   scale 1
+#   position 0 0
+# }
+# 
+# output DP-5 {
+#   resolution 3840x2160
+#   scale 1
+#   position 2560 0
+# }
+# 
+# output eDP-1 {
+#   resolution 2560x1440
+#   scale 1
+#   position 2560 0
+# }
 
 #
 # gammastep to ease colors
@@ -65,6 +71,7 @@ bindsym XF86AudioLowerVolume exec 'pactl set-sink-volume @DEFAULT_SINK@ -3%'
 bindsym XF86AudioMute exec 'pactl set-sink-mute @DEFAULT_SINK@ toggle'
 bindsym XF86MonBrightnessUp exec 'light -A 5'
 bindsym XF86MonBrightnessDown exec 'light -U 5'
+bindsym XF86AudioMicMute exec 'pactl set-source-mute @DEFAULT_SOURCE@ toggle'
 bindsym Print exec $screen
 
 
@@ -89,11 +96,6 @@ input "2:7:SynPS/2_Synaptics_TouchPad" {
   natural_scroll enabled
   # middle_emulation enabled
 }
-
-# # Drawing tablet
-# input "11551:888:Wacom_Co.,Ltd._Intuos_BT_M" {
-#   map_to_output DP-4
-# }
 
 input "1:1:AT_Translated_Set_2_keyboard" {
   xkb_layout us
@@ -157,15 +159,15 @@ input "1133:49277:Logitech_Gaming_Mouse_G502" {
     bindsym $mod+Right focus right
 
     # Move the focused window with the same, but add Shift
-    bindsym $mod+Shift+$left move left
-    bindsym $mod+Shift+$down move down
-    bindsym $mod+Shift+$up move up
-    bindsym $mod+Shift+$right move right
+    bindsym $mod+Shift+$left move left 100px
+    bindsym $mod+Shift+$down move down 100px
+    bindsym $mod+Shift+$up move up 100px
+    bindsym $mod+Shift+$right move right 100px
     # Ditto, with arrow keys
-    bindsym $mod+Shift+Left move left
-    bindsym $mod+Shift+Down move down
-    bindsym $mod+Shift+Up move up
-    bindsym $mod+Shift+Right move right
+    bindsym $mod+Shift+Left move left 100px
+    bindsym $mod+Shift+Down move down 100px
+    bindsym $mod+Shift+Up move up 100px
+    bindsym $mod+Shift+Right move right 100px
 #
 # Workspaces:
 #
@@ -193,6 +195,22 @@ input "1133:49277:Logitech_Gaming_Mouse_G502" {
     bindsym $mod+Shift+0 move container to workspace 10
     # Note: workspaces can have any name you want, not just numbers.
     # We just use 1-10 as the default.
+ 
+    # Switching of workspace
+    bindsym $mod+n workspace prev_on_output
+    bindsym $mod+m workspace next_on_output
+
+    # We cannot use Display Names here... small workaround, this may be a feature for oni
+    workspace 1 output DP-4 eDP-1
+    workspace 2 output DP-4 eDP-1
+    workspace 3 output DP-4 eDP-1
+    workspace 4 output DP-4 eDP-1
+    workspace 5 output DP-4 eDP-1
+    workspace 6 output DP-3 eDP-1
+    workspace 7 output DP-3 eDP-1
+    workspace 8 output DP-3 eDP-1
+    workspace 9 output DP-3 eDP-1
+    workspace 10 output DP-3 eDP-1
 #
 # Layout stuff:
 #
@@ -264,7 +282,8 @@ bindsym $mod+r mode "resize"
 # 
 #     # When the status_command prints a new line to stdout, swaybar updates.
 #     # The default just shows the current date and time.
-#     status_command while date +'%Y-%m-%d %l:%M:%S %p'; do sleep 1; done
+#     status_command while date +'%Y-%m-%d %H:%M'; do sleep 1; done
+#     font Iosevka
 # 
 #     colors {
 #         statusline #ffffff
@@ -279,6 +298,4 @@ bar {
   swaybar_command waybar
 }
 
-exec $HOME/.config/sway/random_wallpaper.sh
-exec $notification
-exec lxpolkit
+exec /home/fred/.config/sway/scripts/autorun.sh
