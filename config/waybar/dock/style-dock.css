@@ -1,0 +1,109 @@
+* {
+    border: transparent;
+    /* border-radius: 0px;*/
+    font-family: Iosevka, Font Awesome, Arial, sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    min-height: 0;
+    color: #ffffff;
+}
+
+window#waybar {
+    background-color: #282c34;
+    border: transparent;
+}
+
+#custom-firefox,
+#custom-terminal,
+#custom-fileman,
+#custom-matrix,
+#custom-music,
+#custom-mail,
+#mpd {
+    padding: 0 10px;
+    font-size: 24px;
+    margin: 0px 0px 0px 0px;
+    opacity: 0.85;
+    background-color: #282c34;
+}
+
+#custom-firefox {
+    color: #51afef;
+}
+
+#custom-terminal {
+    color: #e5c07b;
+}
+
+#custom-fileman {
+    color: #c678dd;
+}
+
+#custom-matrix {
+    color: #ffffaa;
+    border-radius: 0px 8px 0px 0px;
+}
+
+#custom-mail {
+    color: #e06c75;
+}
+
+#custom-music {
+    color: #98c379;
+    border-radius: 8px 0px 0px 0px;
+}
+
+#workspaces {
+    font-weight: bold;
+    opacity: 0.85;
+    border-radius: 0px 8px 0px 0px;
+    background-color: #282c34;
+}
+
+#workspaces button.focused {
+    color: yellow;
+    background-color: #393d45;
+}
+
+#window {
+    margin-left: 20px;
+    border-radius: 8px 8px 0px 0px;
+    padding: 0 10px;
+    opacity: 0.85;
+    background-color: #282c34;
+}
+
+#mode {
+    margin-left: 20px;
+    border-radius: 8px 8px 0px 0px;
+    padding: 0 10px;
+    opacity: 0.85;
+    background-color: #ffa500;
+}
+
+#pulseaudio,
+#memory,
+#cpu,
+#temperature,
+#battery,
+#tray,
+#clock,
+#custom-layout,
+#network {
+    padding: 0 10px;
+    opacity: 0.85;
+    background-color: #282c34;
+}
+
+#pulseaudio {
+    border-radius: 8px 0 0 0;
+}
+
+#battery {
+    color: yellow;
+}
+
+#clock.date {
+    padding-right: 0px;
+}
+

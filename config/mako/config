@@ -6,5 +6,5 @@ text-color=#EBDBB2FF
 font=Iosevka 12
 width=350
 icon-path=/usr/share/icons/Papirus:/home/fred/.local/share/icons/hicolor
-anchor=top-right
+anchor=bottom-right
 layer=overlay

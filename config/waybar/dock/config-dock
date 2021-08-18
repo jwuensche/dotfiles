@@ -1,56 +1,82 @@
-// =============================================================================
-//
-// Waybar configuration (https://hg.sr.ht/~begs/dotfiles)
-//
-// Configuration reference: https://github.com/Alexays/Waybar/wiki/Configuration
-//
-// =============================================================================
-
 {
-    // -------------------------------------------------------------------------
-    // Global configuration
-    // -------------------------------------------------------------------------
-
-    "layer": "top",
-    "position": "top",
-    "height": 21,
-
+    "layer": "top", // Waybar at top layer
+    "position": "bottom", // Waybar position (top|bottom|left|right)
+    "height": 50, // Waybar height (to be removed for auto height)
+    "width": 1000, // Waybar wid
+    // Choose the order of the modules
     "modules-left": [
-    	"sway/mode",
         "sway/workspaces",
-        "custom/arrow10",
-	    "sway/window"
+	    "sway/window",
+        "sway/mode"
     ],
-
-    //"modules-center": [
-    //    "sway/window"
-    //],
-
+    "modules-center": ["custom/music", "custom/mail", "custom/firefox", "custom/terminal", "custom/fileman", "custom/matrix"],
     "modules-right": [
-        "custom/arrow1",
         "pulseaudio",
-        "custom/arrow2",
         "network",
-        "custom/arrow3",
         "memory",
-        "custom/arrow4",
         "cpu",
-        "custom/arrow5",
         "temperature",
-        "custom/arrow6",
         "custom/layout",
-        "custom/arrow7",
         "battery",
-        "custom/arrow8",
         "tray",
         "clock#date",
-        "custom/arrow9",
         "clock#time"
     ],
+    //
+    // DOCK
+    //
+    "custom/firefox": {
+           "format": "",
+           "interval": 1,
+           "tooltip": false,
+           "on-click-right": "mpc toggle",
+           "on-click": "firefox"
 
-    // -------------------------------------------------------------------------
-    // Modules
-    // -------------------------------------------------------------------------
+    },
+    "custom/terminal": {
+           "format": "︁",
+           "interval": 1,
+           "on-click-right": "mpc toggle",
+           "tooltip": false,
+           "on-click": "alacritty"
+
+    },
+    "custom/fileman": {
+           "format": "",
+           "tooltip": false,
+           "interval": 1,
+           "on-click-right": "mpc toggle",
+           "on-click": "alacritty -e 'nnn'",
+
+    },
+    "custom/music": {
+           "format": "",
+           "interval": 1,
+           "tooltip": false,
+           "on-click-right": "mpc toggle",
+           "on-click": "lollypop",
+
+    },
+    "custom/mail": {
+           "format": "",
+           "interval": 1,
+           "on-click-right": "mpc toggle",
+           "tooltip": false,
+           "on-click": "thunderbird",
+
+    },
+    "custom/matrix": {
+           "format": "",
+           "interval": 1,
+           "on-click-right": "mpc toggle",
+           "tooltip": false,
+           "on-click": "element-desktop",
+
+    },
+
+    //
+    // LEFT
+    //
 
     "battery": {
         "interval": 1,
@@ -181,69 +207,4 @@
         ],
         "tooltip": false
     },
-
-    "custom/alsa": {
-        "exec": "amixer get Master | sed -nre 's/.*\\[off\\].*/ muted/p; s/.*\\[(.*%)\\].*/ \\1/p'",
-        "on-click": "amixer set Master toggle; pkill -x -RTMIN+11 waybar",
-        "on-scroll-up": "amixer set Master 1+; pkill -x -RTMIN+11 waybar",
-        "on-scroll-down": "amixer set Master 1-; pkill -x -RTMIN+11 waybar",
-        "signal": 11,
-        "interval": 10,
-        "tooltip": false
-    },
-
-    "tray": {
-        "icon-size": 21
-        //"spacing": 10
-    },
-
-    "custom/arrow1": {
-        "format": "",
-        "tooltip": false
-    },
-
-    "custom/arrow2": {
-        "format": "",
-        "tooltip": false
-    },
-
-    "custom/arrow3": {
-        "format": "",
-        "tooltip": false
-    },
-
-    "custom/arrow4": {
-        "format": "",
-        "tooltip": false
-    },
-
-    "custom/arrow5": {
-        "format": "",
-        "tooltip": false
-    },
-
-    "custom/arrow6": {
-        "format": "",
-        "tooltip": false
-    },
-
-    "custom/arrow7": {
-        "format": "",
-        "tooltip": false
-    },
-
-    "custom/arrow8": {
-        "format": "",
-        "tooltip": false
-    },
-
-    "custom/arrow9": {
-        "format": "",
-        "tooltip": false
-    },
-
-    "custom/arrow10": {
-        "format": "",
-        "tooltip": false
-    }
 }

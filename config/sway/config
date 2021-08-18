@@ -294,8 +294,8 @@ bindsym $mod+r mode "resize"
 
 #
 # Waybar
-bar {
-  swaybar_command waybar
-}
+# bar {
+#   swaybar_command waybar
+# }
 
 exec /home/fred/.config/sway/scripts/autorun.sh
