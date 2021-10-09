@@ -46,7 +46,7 @@
            "tooltip": false,
            "interval": 1,
            "on-click-right": "mpc toggle",
-           "on-click": "alacritty -e 'nnn'",
+           "on-click": "nautilus",
 
     },
     "custom/music": {

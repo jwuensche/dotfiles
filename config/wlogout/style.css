@@ -2,16 +2,14 @@
 	background-image: none;
 }
 window {
-	background-color: rgba(12, 12, 12, 0.3);
+	background-color: rgba(12, 12, 12, 0.5);
 }
 button {
 	background-color: rgba(30,30,30,0.8);
-    font-family: Cantarell;
+    font-family: Iosevka;
+    font-size: 24px;
     color: white;
-    margin-top: 20px;
-	border-style: solid;
-	border-width: 1px;
-    border-radius: 0;
+    border-radius: 8px;
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: 25%;
@@ -23,25 +21,25 @@ button:focus, button:active, button:hover {
 }
 
 #lock {
-    background-image: image(url("/usr/share/wlogout/icons/lock.png"), url("/usr/local/share/wlogout/icons/lock.png"));
+    background-image: -gtk-icontheme('system-lock-screen');
 }
 
 #logout {
-    background-image: image(url("/usr/share/wlogout/icons/logout.png"), url("/usr/local/share/wlogout/icons/logout.png"));
+    background-image: -gtk-icontheme('system-log-out');
 }
 
 #suspend {
-    background-image: image(url("/usr/share/wlogout/icons/suspend.png"), url("/usr/local/share/wlogout/icons/suspend.png"));
+    background-image: -gtk-icontheme('uninterruptible-power-supply');
 }
 
 #hibernate {
-    background-image: image(url("/usr/share/wlogout/icons/hibernate.png"), url("/usr/local/share/wlogout/icons/hibernate.png"));
+    background-image: -gtk-icontheme('drive-harddisk');
 }
 
 #shutdown {
-    background-image: image(url("/usr/share/wlogout/icons/shutdown.png"), url("/usr/local/share/wlogout/icons/shutdown.png"));
+    background-image: -gtk-icontheme('system-shutdown');
 }
 
 #reboot {
-    background-image: image(url("/usr/share/wlogout/icons/reboot.png"), url("/usr/local/share/wlogout/icons/reboot.png"));
+    background-image: -gtk-icontheme('system-reboot');
 }

@@ -12,7 +12,7 @@ set $menu 'wofi'
 set $lock 'swaylock -i /home/fred/Pictures/vector_Wallpapers/mountain_range.jpg -s fill -e --indicator-thickness 5 --font Fira\ Mono'
 set $screen 'grim -g "$(slurp)" - | wl-copy'
 set $gammastep 'gammastep'
-set $sysmenu 'wlogout -p layer-shell -b 6 -B 50'
+set $sysmenu 'wlogout -p layer-shell -b 3 -c 50 -r 50'
 
 #
 # Output configuration
@@ -69,8 +69,8 @@ focus_follows_mouse no
 bindsym XF86AudioRaiseVolume exec 'pactl set-sink-volume @DEFAULT_SINK@ +3%'
 bindsym XF86AudioLowerVolume exec 'pactl set-sink-volume @DEFAULT_SINK@ -3%'
 bindsym XF86AudioMute exec 'pactl set-sink-mute @DEFAULT_SINK@ toggle'
-bindsym XF86MonBrightnessUp exec 'light -A 5'
-bindsym XF86MonBrightnessDown exec 'light -U 5'
+bindsym XF86MonBrightnessUp exec 'light -A 2'
+bindsym XF86MonBrightnessDown exec 'light -U 2'
 bindsym XF86AudioMicMute exec 'pactl set-source-mute @DEFAULT_SOURCE@ toggle'
 bindsym Print exec $screen
 
