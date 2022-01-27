@@ -70,7 +70,7 @@
            "interval": 1,
            "on-click-right": "mpc toggle",
            "tooltip": false,
-           "on-click": "element-desktop",
+           "on-click": "flatpak run im.riot.Riot",
 
     },
 

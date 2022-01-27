@@ -1,0 +1,19 @@
+profile docked {
+  output eDP-1 disable
+  output "Dell Inc. DELL P2418D MY3ND919058T" mode 2560x1440 position 0,0
+  output "Lenovo Group Limited LEN L28u-30 U1B42H9Z" mode 3840x2160 position 2560,0
+  exec swaymsg workspace number 1, move workspace to output '"Dell Inc. DELL P2418D MY3ND919058T"'
+  exec swaymsg workspace number 2, move workspace to output '"Dell Inc. DELL P2418D MY3ND919058T"'
+  exec swaymsg workspace number 3, move workspace to output '"Dell Inc. DELL P2418D MY3ND919058T"'
+  exec swaymsg workspace number 4, move workspace to output '"Dell Inc. DELL P2418D MY3ND919058T"'
+  exec swaymsg workspace number 5, move workspace to output '"Dell Inc. DELL P2418D MY3ND919058T"'
+  exec swaymsg workspace number 6, move workspace to output '"Lenovo Group Limited LEN L28u-30 U1B42H9Z"'
+  exec swaymsg workspace number 7, move workspace to output '"Lenovo Group Limited LEN L28u-30 U1B42H9Z"'
+  exec swaymsg workspace number 8, move workspace to output '"Lenovo Group Limited LEN L28u-30 U1B42H9Z"'
+  exec swaymsg workspace number 9, move workspace to output '"Lenovo Group Limited LEN L28u-30 U1B42H9Z"'
+  exec swaymsg workspace number 0, move workspace to output '"Lenovo Group Limited LEN L28u-30 U1B42H9Z"'
+}
+
+profile mobile {
+  output eDP-1 enable scale 1.0
+}

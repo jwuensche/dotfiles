@@ -1,0 +1,11 @@
+[Unit]
+Description=PolicyKit Authentication Agent
+Documentation=https://www.lxde.org/
+BindsTo=sway-session.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/lxpolkit
+
+[Install]
+WantedBy=sway-session.target

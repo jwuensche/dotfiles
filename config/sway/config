@@ -74,27 +74,14 @@ bindsym XF86MonBrightnessDown exec 'light -U 2'
 bindsym XF86AudioMicMute exec 'pactl set-source-mute @DEFAULT_SOURCE@ toggle'
 bindsym Print exec $screen
 
-
-### Idle configuration
-#
-# Example configuration:
-#
-exec swayidle -w \
-         timeout 300  "swaymsg \"output * dpms off\" && $lock"\
-              resume 'swaymsg "output * dpms on"' \
-         before-sleep 'swaylock -f -c 000000'
-
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
 
 ### Input configuration
 input "2:7:SynPS/2_Synaptics_TouchPad" {
-  # Trying out if the error also ocurs when this is not set
-  # dwt enabled
   tap enabled
   natural_scroll enabled
-  # middle_emulation enabled
 }
 
 input "1:1:AT_Translated_Set_2_keyboard" {
@@ -168,6 +155,9 @@ input "1133:49277:Logitech_Gaming_Mouse_G502" {
     bindsym $mod+Shift+Down move down 100px
     bindsym $mod+Shift+Up move up 100px
     bindsym $mod+Shift+Right move right 100px
+
+    # make floating window sticky to all workspaces
+    bindsym $mod+s sticky toggle
 #
 # Workspaces:
 #
@@ -182,7 +172,7 @@ input "1133:49277:Logitech_Gaming_Mouse_G502" {
     bindsym $mod+8 workspace 8
     bindsym $mod+9 workspace 9
     bindsym $mod+0 workspace 10
-    # Move focused ntainer to workspace
+    # Move focused container to workspace
     bindsym $mod+Shift+1 move container to workspace 1
     bindsym $mod+Shift+2 move container to workspace 2
     bindsym $mod+Shift+3 move container to workspace 3
@@ -298,4 +288,5 @@ bindsym $mod+r mode "resize"
 #   swaybar_command waybar
 # }
 
-exec /home/fred/.config/sway/scripts/autorun.sh
+# exec /home/fred/.config/sway/scripts/autorun.sh
+exec_always "systemctl --user import-environment; systemctl --user start sway-session.target"

@@ -1,0 +1,11 @@
+[Unit]
+Description=Customizable Wayland Bar
+Documentation=https://github.com/emersion/kanshi
+BindsTo=sway-session.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/waybar -c /home/fred/.config/waybar/dock/config-dock -s /home/fred/.config/waybar/dock/style-dock.css
+
+[Install]
+WantedBy=sway-session.target

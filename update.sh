@@ -1,3 +1,5 @@
 #!/bin/bash
 
-cp ${HOME}/.config/{waybar,sway,wofi,mako,wlogout,systemd,doom} ${PWD}/config -r
+rm config -r
+mkdir config
+cp ${HOME}/.config/{alacritty,waybar,sway,wofi,mako,wlogout,systemd,environment.d,doom,kanshi,wayfire.ini} config -r
