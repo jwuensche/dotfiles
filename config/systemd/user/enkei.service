@@ -5,7 +5,8 @@ BindsTo=sway-session.target
 
 [Service]
 Type=simple
-ExecStart=/usr/bin/enkei /home/fred/Pictures/Fuji/Fuji.xml
+Environment="RUST_LOG=enkei=debug"
+ExecStart=/usr/bin/enkei /home/fred/Pictures/WallpapersAll/wallpaper.xml
 Restart=on-failure
 
 [Install]

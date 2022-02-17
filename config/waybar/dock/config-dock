@@ -9,7 +9,7 @@
 	    "sway/window",
         "sway/mode"
     ],
-    "modules-center": ["custom/music", "custom/mail", "custom/firefox", "custom/terminal", "custom/fileman", "custom/matrix"],
+    // "modules-center": ["custom/music", "custom/mail", "custom/firefox", "custom/terminal", "custom/fileman", "custom/matrix"],
     "modules-right": [
         "pulseaudio",
         "network",
